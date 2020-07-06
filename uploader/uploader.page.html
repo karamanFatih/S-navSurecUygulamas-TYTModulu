@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>uploader</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  
+
+<div class="camera"></div><br/>
+<input type="file" *ngIf="!imageURL"  (change)="fileChanged($event)"/>
+
+
+
+<ion-card *ngIf="imageURL">
+  <img *ngIf="imageURL" src="https://ucarecdn.com/{{imageURL}}/"/>
+<ion-card-content>
+ 
+ 
+  <ion-textarea placeholder="Açıklama Giriniz" [(ngModel)]="aciklama"></ion-textarea>
+<ion-button shape="round" color="primary" (click)="postOlustur()">POST</ion-button>
+</ion-card-content>
+
+</ion-card>
+
+
+</ion-content>
